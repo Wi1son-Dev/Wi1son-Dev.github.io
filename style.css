@@ -1,0 +1,112 @@
+        /* 基本スタイル */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6; /* 少しグレーがかった背景 */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        h4 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        /* プロフィールセクション */
+        .about-container {
+            display: flex; /* 写真とテキストを横並びにする */
+            align-items: flex-start; /* 上端を揃える */
+            gap: 30px; /* 写真とテキストの間隔 */
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 150px; /* 程よい大きさに指定 */
+            height: 150px; /* 程よい大きさに指定 */
+            object-fit: cover; /* 画像の比率を保ちつつ、指定サイズに収める */
+            border: 1px solid #ddd; /* 写真の枠線 */
+            border-radius: 5px; /* 少しだけ角を丸くする */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 影を追加して立体感を出す */
+            flex-shrink: 0; /* flexアイテムとして縮まないようにする */
+        }
+
+        .profile-text {
+            flex-grow: 1; /* 残りのスペースを埋める */
+            font-size: 1rem;
+        }
+
+        .profile-text p {
+            margin-bottom: 15px;
+        }
+
+        .profile-text strong {
+            color: #2980b9; /* 強調文字の色 */
+        }
+
+        /* スキルセクション */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* レスポンシブ対応で2列表示 */
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skills-grid > div {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+
+        .skills-list {
+            list-style: none; /* デフォルトのリストマーカーを非表示 */
+            padding: 0;
+            margin: 0;
+        }
+
+        .skills-list li {
+            background-color: #ecf0f1;
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            display: inline-block; /* 横並びにする */
+            margin-right: 8px; /* 各スキル項目の間隔 */
+            font-size: 0.9em;
+            color: #555;
+            border: 1px solid #dde1e2;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column; /* 小さい画面では縦並びにする */
+                align-items: center; /* 中央揃え */
+                text-align: center;
+            }
+
+            .profile-image {
+                margin-bottom: 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr; /* 1列にする */
+            }
+        }
